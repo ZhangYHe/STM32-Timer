@@ -6,7 +6,8 @@ void DISPLAY_GPIO_Config(void)
 		GPIO_InitTypeDef GPIO_InitStructure;
 
 		/*开启DISPLAY相关的GPIO外设时钟*/
-		RCC_APB2PeriphClockCmd( DISPLAY1_GPIO_CLK | DISPLAY2_GPIO_CLK | DISPLAY4_GPIO_CLK | DISPLAY5_GPIO_CLK | DISPLAY7_GPIO_CLK | DISPLAY10_GPIO_CLK | DISPLAY11_GPIO_CLK, ENABLE);
+		RCC_APB2PeriphClockCmd( DISPLAY1_GPIO_CLK | DISPLAY2_GPIO_CLK | DISPLAY4_GPIO_CLK | DISPLAY5_GPIO_CLK | DISPLAY7_GPIO_CLK | DISPLAY10_GPIO_CLK | DISPLAY11_GPIO_CLK | DISPLAY6_GPIO_CLK | \
+		DISPLAY8_GPIO_CLK | DISPLAY9_GPIO_CLK | DISPLAY12_GPIO_CLK , ENABLE);
 		/*选择要控制的GPIO引脚*/
 		GPIO_InitStructure.GPIO_Pin = DISPLAY1_GPIO_PIN;	
 
@@ -37,7 +38,19 @@ void DISPLAY_GPIO_Config(void)
 		
 		GPIO_InitStructure.GPIO_Pin = DISPLAY11_GPIO_PIN;
 		GPIO_Init(DISPLAY11_GPIO_PORT, &GPIO_InitStructure);
-
+		
+		GPIO_InitStructure.GPIO_Pin = DISPLAY6_GPIO_PIN;
+		GPIO_Init(DISPLAY6_GPIO_PORT, &GPIO_InitStructure);
+		
+		GPIO_InitStructure.GPIO_Pin = DISPLAY8_GPIO_PIN;
+		GPIO_Init(DISPLAY8_GPIO_PORT, &GPIO_InitStructure);
+		
+		GPIO_InitStructure.GPIO_Pin = DISPLAY9_GPIO_PIN;
+		GPIO_Init(DISPLAY9_GPIO_PORT, &GPIO_InitStructure);
+		
+		GPIO_InitStructure.GPIO_Pin = DISPLAY12_GPIO_PIN;
+		GPIO_Init(DISPLAY12_GPIO_PORT, &GPIO_InitStructure);
+		
 		/* 关闭所有DISPLAY灯	*/
 		GPIO_SetBits(DISPLAY1_GPIO_PORT, DISPLAY1_GPIO_PIN);
 		
@@ -52,6 +65,14 @@ void DISPLAY_GPIO_Config(void)
 		GPIO_SetBits(DISPLAY10_GPIO_PORT, DISPLAY10_GPIO_PIN);	 
 		
 		GPIO_SetBits(DISPLAY11_GPIO_PORT, DISPLAY11_GPIO_PIN);
+		
+		GPIO_ResetBits(DISPLAY6_GPIO_PORT, DISPLAY6_GPIO_PIN);	 
+		
+		GPIO_ResetBits(DISPLAY8_GPIO_PORT, DISPLAY8_GPIO_PIN);
+		
+		GPIO_ResetBits(DISPLAY9_GPIO_PORT, DISPLAY9_GPIO_PIN);	 
+		
+		GPIO_ResetBits(DISPLAY12_GPIO_PORT, DISPLAY12_GPIO_PIN);
     
 }
 
@@ -70,10 +91,33 @@ void Close_Display(void)
 		GPIO_SetBits(DISPLAY10_GPIO_PORT, DISPLAY10_GPIO_PIN);	 
 		
 		GPIO_SetBits(DISPLAY11_GPIO_PORT, DISPLAY11_GPIO_PIN);
+	
+		GPIO_ResetBits(DISPLAY6_GPIO_PORT, DISPLAY6_GPIO_PIN);	 
+		
+		GPIO_ResetBits(DISPLAY8_GPIO_PORT, DISPLAY8_GPIO_PIN);
+		
+		GPIO_ResetBits(DISPLAY9_GPIO_PORT, DISPLAY9_GPIO_PIN);	 
+		
+		GPIO_ResetBits(DISPLAY12_GPIO_PORT, DISPLAY12_GPIO_PIN);
 }
 
-void Chose_Number(int number)
+void Chose_Number(int id,int number)
 {
+		switch(id)
+		{
+			case 1:
+				GPIO_SetBits(DISPLAY12_GPIO_PORT, DISPLAY12_GPIO_PIN);
+				break;
+			case 2:
+				GPIO_SetBits(DISPLAY9_GPIO_PORT, DISPLAY9_GPIO_PIN);
+				break;
+			case 3:
+				GPIO_SetBits(DISPLAY8_GPIO_PORT, DISPLAY8_GPIO_PIN);
+				break;
+			case 4:
+				GPIO_SetBits(DISPLAY6_GPIO_PORT, DISPLAY6_GPIO_PIN);
+				break;
+		}
 		switch(number)
 		{
 			case 0:
@@ -156,7 +200,12 @@ void Chose_Number(int number)
 				break;
 		}
 		//关闭所有数码管
-		Close_Display();
+		//Close_Display();
+}
+
+void Delay(void)
+{
+	for(int j = 0;j<=0xfff;j++) {};
 }
 
 void Display_Time(void)
@@ -170,10 +219,18 @@ void Display_Time(void)
 	
 		while(1)
 		{
-				Chose_Number(num1);
-				Chose_Number(num2);
-				Chose_Number(num3);
-				Chose_Number(num4);
+				Chose_Number(1,num1);
+				Delay();
+			  Close_Display();
+				Chose_Number(2,num2);
+				Delay();
+				Close_Display();
+				Chose_Number(3,num3);
+				Delay();
+				Close_Display();
+				Chose_Number(4,num4);
+				Delay();
+				Close_Display();
 		}
 }
 /*	0--->ABCDEF			11/7/4/2/1/10
