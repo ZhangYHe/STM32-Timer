@@ -208,7 +208,6 @@ void Delay(void)
 	for(int j = 0;j<=0xfff;j++) {};
 }
 
-
 void Display_Time(void)
 {
 		int num1,num2,num3,num4;
