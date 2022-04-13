@@ -1,0 +1,14 @@
+td,th {
+	font-family: 新宋体;
+	font-size: 25px;
+    text-align:center;
+}
+
+.link{
+    text-align: center;
+    color: black;
+}
+    
+.link:hover{
+    color:rgb(160, 157, 157);
+}

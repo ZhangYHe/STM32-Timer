@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c参考-time</title>
+    <link rel="stylesheet" type="text/css" href="../../style/index.css">
+    <link rel="stylesheet" type="text/css" href="../../style/c-c++参考.css">
+</head> 
+<body style="margin: 0; padding: 0;">
+    <p id="login"><a href="../html/登录界面_中文.html">注册/登录</a></p>
+    <hr size="1" width="85%">
+    <div>
+        <ul class ="guide">
+            <li><a href="../../index.html">首页</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../语言简介二级目录/简介_中文.html">简介</a></dd>
+                    <dd><a href="../语言简介二级目录/发展历史_中文.html">发展历史</a></dd>
+                </dl>
+                <a href="#">语言简介</a>
+            </li>
+            <li><a href="../开发平台_中文.html">开发平台</a></li>
+            <li><a href="../学习资源_中文.html">学习资源</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../C参考_中文.html">c函数库</a></dd>
+                    <dd><a href="../C++参考_中文.html">c++函数库</a></dd>
+                </dl>
+                <a href="#">c/c++参考</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../训练题单.html">基础</a></dd>
+                    <dd><a href="../训练题单.html#进阶">进阶</a></dd>
+                </dl>
+                <a href="#">训练题单</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../项目介绍_中文.html">项目介绍</a></dd>
+                    <dd><a href="../成员介绍_中文.html">成员简介</a></dd>
+                </dl>
+                <a href="#">关于我们</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="leftguide">
+        <ul>
+            <li><a href="c_stdio_中文.html">&lt;stdio.h&gt;</a></li>
+            <li><a href="c_stdlib_中文.html">&lt;stdlib.h&gt;</a></li>
+            <li><a href="c_string_中文.html">&lt;string.h&gt;</a></li>
+            <li><a href="c_math_中文.html">&lt;math.h&gt;</a></li>
+            <li><a href="c_time_中文.html">&lt;time.h&gt;</a></li>
+            <li><a href="c_ctype_中文.html">&lt;ctype.h&gt;</a></li>     
+        </ul>
+        <div class="rightcolumn">
+            <div class="funcblock">
+                <h2>clock</h2>
+                <p>语法: <br>
+                #include &lttime.h&gt<br>
+                clock_t clock( void );<br><br>
+                函数返回自程序开始运行的处理器时间，如果无可用信息，返回-1。<br>
+                转换返回值以秒记, 返回值除以CLOCKS_PER_SECOND. (注: 如果编译器是POSIX兼容的, CLOCKS_PER_SECOND定义为1000000.) 
+                
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>time</h2>
+                <p>
+                语法:<br>
+                #include &lttime.h&gt<br>
+                time_t time( time_t *time );<br><br>
+                函数返回当前时间，如果发生错误返回零。如果给定参数time ，那么当前时间存储到参数time中。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>difftime</h2>
+                <p> 
+                语法:<br> 
+                #include &lttime.h&gt<br>
+                double difftime( time_t time2, time_t time1 );<br><br>
+                函数返回时间参数time2和time1之差的秒数表示。 
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>mktime</h2>
+                <p>
+                语法:<br> 
+                #include &lttime.h&gt<br>
+                time_t mktime( struct tm *time );<br><br>
+                函数转换参数time 类型的本地时间至日历时间，并返回结果。如果发生错误，返回-1。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>asctime</h2>
+                <p>
+                语法:<br> 
+                #include &lttime.h&gt<br>
+                char *asctime( const struct tm *ptr );<br><br>
+                函数将ptr所指向的时间结构转换成下列字符串：<br><br>
+                day month date hours:minutes:seconds year\n\0<br><br>
+                例如:<br><br>
+                Mon Jun 26 12:03:53 2000  
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>ctime</h2>
+                <p>
+                语法:<br> 
+                #include &lttime.h&gt<br>
+                char *ctime( const time_t *time );<br><br>
+                函数转换参数time为本地时间格式：<br><br>
+                day month date hours:minutes:seconds year\n\0<br><br>
+                ctime() 等同<br><br>
+                asctime( localtime( tp ) );
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>gmtime</h2>
+                <p>
+                语法:<br> 
+                #include &lttime.h&gt<br>
+                struct tm *gmtime( const time_t *time );<br><br>
+                函数返回给定的统一世界时间（通常是格林威治时间），如果系统不支持统一世界时间系统返回NULL。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>localtime</h2>
+                <p>
+                语法:<br> 
+                #include &lttime.h&gt<br>
+                struct tm *localtime( const time_t *time );<br><br>
+                函数返回本地日历时间。   
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>strftime</h2>
+                <p>
+                语法: <br>
+                #include &lttime.h&gt<br>
+                size_t strftime( char *str, size_t maxsize, const char *fmt, struct tm *time );<br><br>
+                函数按照参数fmt所设定格式将time类型的参数格式化为日期时间信息，然后存储在字符串str中（至多maxsize 个字符）。用于设定时间不同类型的代码为：<br><br> 
+                代码含义：<br><br>
+                <table cellspacing="10" style="font-family: 新宋体;">
+                    <tr>
+                        <td>"%a"</td><td>星期的缩略形式</td>
+                    </tr>
+                    <tr>
+                        <td>"%A"</td><td>星期的完整形式</td>
+                    </tr>
+                    <tr>
+                        <td>"%b"</td><td>月份的缩略形式</td>
+                    </tr>
+                    <tr>
+                        <td>"%B"</td><td>月份的完整形式</td>
+                    </tr>
+                    <tr>
+                        <td>"%c"</td><td>星期的缩略形式</td>
+                    </tr>
+                    <tr>
+                        <td>"%d"</td><td>月中的第几天</td>
+                    </tr>
+                    <tr>
+                        <td>"%H"</td><td> 小时, 24小时格式 (0-23)                        </td>
+                    </tr>
+                    <tr>
+                        <td>"%I"</td><td> 小时, 12小时格式  (1-12)                        </td>
+                    </tr>
+                    <tr>
+                        <td>"%j"</td><td>年中的第几天(1-366)</td>
+                    </tr>
+                    <tr>
+                        <td>"%m"</td><td>月份 (1-12). Note: 某些版本的Microsoft Visual C++ 可能使用取值范围0-11.</td>
+                    </tr>
+                    <tr>
+                        <td>"%M"</td><td> 分钟(0-59)</td>
+                    </tr>
+                    <tr>
+                        <td>"%p"</td><td>本地时间的上午或下午（AM or PM）</td>
+                    </tr>
+                    <tr>
+                        <td>"%S"</td><td> 秒钟(0-59)</td>
+                    </tr>
+                    <tr>
+                        <td>"%U"</td><td>年中的第几周，星期天是一周的第一天</td>
+                    </tr>
+                    <tr>
+                        <td>"%w"</td><td>星期几的数字表示(0-6, 星期天=0)</td>
+                    </tr>
+                    <tr>
+                        <td>"%W"</td><td> 一年中的第几周，星期天是一周的第一天</td>
+                    </tr>
+                    <tr>
+                        <td>"%x"</td><td>标准日期字符串</td>
+                    </tr>
+                    <tr>
+                        <td>"%X"</td><td> 标准时间字符串</td>
+                    </tr>
+                    <tr>
+                        <td>"%y"</td><td>年(0-99)</td>
+                    </tr>
+                    <tr>
+                        <td>"%Y"</td><td>用CCYY表示的年（如：2004）</td>
+                    </tr>      
+                </table>
+                </p>
+            </div>
+        </div>    
+    <hr style="position:absolute;top: 3000px;left: 10%;" size="1" width="85%">
+    <p id="footer" style="position:absolute;left:40%;top: 3000px;padding-bottom: 15px;">
+        Copyright &copy 2021 What's up小组 All Rights Reserved.
+    </p>
+</body>
+</html00

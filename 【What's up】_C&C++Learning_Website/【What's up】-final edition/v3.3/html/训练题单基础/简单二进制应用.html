@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单二进制应用</title>
+    <link rel="stylesheet" type="text/css" href="../../style/index.css">
+    <link rel="stylesheet" type="text/css" href="../../style/intro.css">
+    <link rel="stylesheet" type="text/css" href="../../style/题单.css">
+    <style>
+
+			.question_title {
+				font-weight: bold;
+				padding: 15px 0;
+                font-size: xlarge;
+			}
+
+			.tips {
+				font-size: 12px;
+				font-weight: normal;
+				margin-left: 15px;
+			}
+
+			.answer {
+				margin: 5px 0;
+				display: flex;
+				width: 300px;
+				justify-content: space-between;
+			}
+
+			.answer>div:last-child {
+				margin-left: 15px;
+			}
+
+			.btn {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.btn * {
+				margin: 15px 10px;
+				font-size: 16px;
+                background-color: lemonchiffon;
+                font-family: 宋体;
+                height: 2.5rem; 
+                width: 5rem; 
+			}
+            button:hover
+            {
+                background-color: rgb(245, 166, 19);
+            }
+    </style>
+</head>
+<body style="margin: 0; padding: 0;">
+    <p id="login"><a href="html/登录界面_中文.html">注册/登录</a>
+    <!-- <a href="index_英文.html">English</a></p> -->
+    <hr size="1" width="85%">
+    
+    <div>
+        <ul class ="guide">
+            <li><a href="../../index.html">首页</a></li>
+            <li>
+                <dl>
+                    <dd><a href="简介_中文.html">简介</a></dd>
+                    <dd><a href="发展历史_中文.html">发展历史</a></dd>
+                </dl>
+                <a href="#">语言简介</a>
+            </li>
+            <li><a href="../开发平台_中文.html">开发平台</a></li>
+            <li><a href="../学习资源_中文.html">学习资源</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../C参考_中文.html">c函数库</a></dd>
+                    <dd><a href="../C++参考_中文.html">c++函数库</a></dd>
+                </dl>
+                <a href="#">c/c++参考</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../训练题单.html">基础</a></dd>
+                    <dd><a href="../训练题单.html#进阶">进阶</a></dd>
+                </dl>
+                <a href="#">训练题单</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../项目介绍_中文.html">项目介绍</a></dd>
+                    <dd><a href="../成员介绍_中文.html">成员简介</a></dd>
+                </dl>
+                <a href="#">关于我们</a>
+            </li>
+        </ul>
+    </div>
+    <div class="main" id="main"></div>
+    <div class="btn">
+        <button type="button" onclick="submit()">提交试卷</button>
+        <button type="button" onclick="reloadPage()">重做试卷</button>
+        
+    </div>
+    <p>
+        <a href="../训练题单答案.html#1002" style="position: absolute;left: 46%;">参考答案</a>
+    </p>
+    <p>&nbsp;</p>
+    <p style="position: absolute;left: 36%;">
+            <a href="../训练题单.html" style="margin-left: 50px;top: 90%;">返回题单</a>
+            <a href="基本表达式运算.html" style="margin-left: 140px;top: 90%;">下一题</a>
+    </p>    
+    <hr style="position:absolute;top: 740px;left: 1.2%;" size="1" width="97.4%">
+    <p id="footer" style="position:absolute;left:38%;top: 740px;padding-bottom: 15px;">Copyright &copy 2021 What's up小组 All Rights Reserved.</p>
+</body>
+<script type="text/javascript">
+    let questions = [{
+            type: "single",
+            value: 30,
+            question: "1.用十进制表示表达式12|012的值为（  ）",
+            answers: [{
+                answer: "A.1", 
+                right: false
+            }, {
+                answer: "B.0",
+                right: false
+            }, {
+                answer: "C.12",
+                right: false
+            }, {
+                answer: "D.14",
+                right: true
+            }],
+        },
+        {
+            type: "single",
+            value: 30,
+            question: "2.已知int a=-15；执行a=a>>2，a为（  ）",
+            answers: [{
+                answer: "A.3",
+                right: false
+            }, {
+                answer: "B.-3",
+                right: false
+            }, {
+                answer: "C.4",
+                right: false
+            }, {
+                answer: "D.-4",
+                right: true
+            },],
+        },
+        
+    ]
+
+    let template = {
+        "single": function(o, index) {
+
+            let arr = o.answers.map(item => {
+                return `<div class="answer" >
+                    <div>${item.answer}</div>
+                    <div><input type="radio" name="${index}" right="${item.right}"/></div>
+                </div>`
+            })
+
+
+            let str =
+                `<div class="question" type="${o.type}" value="${o.value}">
+            <div class="question_title">
+                ${o.question}<span class="tips">单选题${o.value}分</span>
+            </div>
+            <div class="answers">
+                ${arr.join("")}
+            </div>
+        </div>
+`
+            return str;
+        },
+        "multiple": function(o, index) {
+            let arr = o.answers.map(item => {
+                return `<div class="answer">
+                    <div>${item.answer}</div>
+                    <div><input type="checkbox" name="${index}" right="${item.right}" /></div>
+                </div>`
+            })
+            let str =
+                `<div class="question" type="${o.type}" value="${o.value}">
+            <div class="question_title">
+                ${o.question}<span class="tips">多选题${o.value}分</span>
+            </div>
+            <div class="answers">
+
+                ${arr.join("")}
+            </div>
+        </div>`
+            return str;
+        },
+        "judge": function(o, index) {
+
+            let str =
+                `<div class="question" type="${o.type}" value="${o.value}">
+            <div class="question_title">
+                ${o.question}<span class="tips">判断题${o.value}分</span>
+            </div>
+            <div class="answers">
+                <div class="answer">
+                    <div>正确</div>
+                    <div><input type="radio" name="${index}" right="${o.answers}" /></div>
+                </div>
+                <div class="answer">
+                    <div>错误</div>
+                    <div><input type="radio" name="${index}" right="${!o.answers}" /></div>
+                </div>
+            </div>
+        </div>`
+            return str;
+        }
+    }
+
+    function init() {
+        let arr = [];
+        for (index in questions) {
+            let templateStr = template[questions[index].type](questions[index], index)
+            arr.push(templateStr);
+        }
+
+        let main = document.getElementById("main");
+        main.innerHTML = arr.join("");
+
+    }
+
+    function submit() {
+        let elementArr = document.getElementsByClassName("question");
+        let point = 0;
+        let totalPoint = 0;
+        for (let index = 0; index < elementArr.length; index++) {
+            let element = elementArr[index];
+            let value = element.getAttribute("value");
+            totalPoint +=parseInt(value);
+            let answerList = element.querySelectorAll(".answer");
+            let count = 0;
+            let type = element.getAttribute("type");
+            for (let index_a = 0; index_a < answerList.length; index_a++) {
+                let inputItem = answerList[index_a].querySelector("input");
+                
+               
+                if(inputItem.getAttribute("right") == "true"){
+                    answerList[index_a].style.backgroundColor="greenyellow";
+                }
+                
+                if( type == "single"){
+                    if(inputItem.checked && inputItem.getAttribute("right") == "true"){
+                        point+=parseInt(value);
+                    }
+                }
+                
+                if( type == "multiple"){
+                    
+                    if((inputItem.checked && inputItem.getAttribute("right") == "false") ||( !inputItem.checked && inputItem.getAttribute("right") == "true")){
+                        count ++
+                    }
+                }
+               
+                if(type == "judge"){
+                    
+                    if((inputItem.checked && inputItem.getAttribute("right") == "true")){
+                        point+=parseInt(value);
+                    }
+                }
+                
+            }
+            if( type == "multiple"){
+                
+                if(count == 0){
+                    point+=parseInt(value);
+                }
+            }
+        }
+        
+        alert("总分是："+totalPoint+",  您的得分是："+point)
+    }
+    
+    function reloadPage(){
+        location.reload();
+    }
+
+
+    init();
+</script>
+</html>

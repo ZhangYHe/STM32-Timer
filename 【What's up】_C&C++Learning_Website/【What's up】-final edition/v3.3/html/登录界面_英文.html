@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>登录界面——What's up C/C++学习平台</title>
+		<link rel="stylesheet" type="text.css" href="../style/登录界面.css">
+		<style type="text/css">
+			a{position: absolute;
+				
+				color: rgb(11, 182, 250);
+				text-decoration: none;
+			}
+			a:hover{
+				color: rgb(235, 213, 23);
+				text-decoration: underline;
+			}
+			input.bottom:hover{
+				background-color: rgb(245, 166, 19);
+			}
+			body{
+				height: 775px;
+  				background-image: linear-gradient(to bottom right, rgb(0, 255, 221), rgb(0, 110, 255));}
+			.flex-body{
+				display: flex;
+				flex-direction: row;
+				width: 100%;
+				height: 25rem;
+			}
+			.flex-box{
+				position: absolute;
+				top:25%;left:30%;
+				flex-basis: auto;
+				background-color: white;
+				border-radius: 30px;
+				border: 5px darkgrey double;
+				width: 42%;
+				height:23rem;
+			}
+			.put-in{		
+				height: 25px;
+				width: 12rem;
+			}
+			.bottom{
+				position: absolute;
+				left: 45%; 
+				height: 2.5rem; 
+				width: 5rem; 
+				border: 0.1rem gray solid; 
+				background-color: lemonchiffon;
+				font-family: 楷体;
+				font-size: large;
+			}
+			input[type=text]:focus {
+  				background-color: rgb(186, 230, 245);
+			}
+			.picture:hover
+        	{
+           background-color: rgb(4, 239, 247);
+           box-shadow:1px 1px 5px #333;
+           -webkit-box-shadow:1px 1px 5px #333;
+           -moz-box-shadow:1px 1px 5px #333;
+        	}
+		</style>
+		<script>
+			function find(){
+			    var search_username = document.getElementById("username").value;
+				var search_userpassword = document.getElementById("userpassword").value;
+			    var result_userpassword = localStorage.getItem(search_username); 
+				if(result_userpassword==null){
+					alert("Invalid account name! Please check your login account");
+				}else if(search_userpassword==result_userpassword){
+					alert("Login succeeded!");
+					window.location.href="../index_英文.html";
+					for(var i=0;i<localStorage.length;i++){
+					    var userhead = localStorage.key(i);  
+						if(userhead==search_username+1){
+							var userkind=localStorage.getItem(userhead); 
+							if(userkind=="Student"){
+								url="../index.html?username="+username.value;
+							}
+							window.location.href = url;
+						}
+					}  
+				}else{
+					alert("Login failed! Please check that your password is correct");
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		<div class="flex-body">
+			<div>
+				<img src="" style="width: 100%;height: auto;position: absolute;top: 0;left: 0;z-index: 0;">
+			</div>
+			<div class="flex-box">
+				<a href="../index_英文.html" style="position:absolute;left: 2%;top: 3%;width: 8rem;height: 8rem;" title="Click here to return to the home page" class="picture">
+					<img src="../image/what's up logo.png" style="position:absolute;left: 3%;top: 5%;width: 8rem;height: 8rem;"/>
+				</a>
+				<strong style="position:absolute;left: 26%;font-size: x-large;font-family: 楷体;top: 15%;">What's up C/C++ Learning platform</strong>
+				<form style="position:absolute;top: 45%;left: 25%;">
+					Account:  <input type="text" class="put-in" id="username" name="username" placeholder="Please enter your account"/>
+					<br><br>
+					Password:<input type="password" class="put-in" id="userpassword" name="userpassword" placeholder="Please enter your password"/>
+					<br><br>
+					<input class="bottom" type="button" value="Sign in" onclick="find()" />
+				</form>
+				<div>
+					<a href="注册界面_英文.html" style="left: 35%;top: 90%;">register</a>
+				</div>
+				<div>
+					<p style="position: absolute;left: 50%;top: 85%;color: rgb(11, 15, 17);"><strong>|</strong></p>
+				</div>
+				<div>
+					<a href="./登录界面_中文.html" style="left: 60%;top: 90%;">中文</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

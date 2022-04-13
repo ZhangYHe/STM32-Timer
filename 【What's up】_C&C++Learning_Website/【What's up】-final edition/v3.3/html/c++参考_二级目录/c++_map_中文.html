@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c++参考-map</title>
+    <link rel="stylesheet" type="text/css" href="../../style/index.css">
+    <link rel="stylesheet" type="text/css" href="../../style/c-c++参考.css">
+</head> 
+<body style="margin: 0; padding: 0;">
+    <p id="login"><a href="../html/登录界面_中文.html">注册/登录</a></p>
+    <hr size="1" width="85%">
+    <div>
+        <ul class ="guide">
+            <li><a href="../../index.html">首页</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../语言简介二级目录/简介_中文.html">简介</a></dd>
+                    <dd><a href="../语言简介二级目录/发展历史_中文.html">发展历史</a></dd>
+                </dl>
+                <a href="#">语言简介</a>
+            </li>
+            <li><a href="../开发平台_中文.html">开发平台</a></li>
+            <li><a href="../学习资源_中文.html">学习资源</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../C参考_中文.html">c函数库</a></dd>
+                    <dd><a href="../C++参考_中文.html">c++函数库</a></dd>
+                </dl>
+                <a href="#">c/c++参考</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../训练题单.html">基础</a></dd>
+                    <dd><a href="../训练题单.html#进阶">进阶</a></dd>
+                </dl>
+                <a href="#">训练题单</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../项目介绍_中文.html">项目介绍</a></dd>
+                    <dd><a href="../成员介绍_中文.html">成员简介</a></dd>
+                </dl>
+                <a href="#">关于我们</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="leftguide">
+        <ul>
+            <li><a href="c++_vector_中文.html">&lt;vector&gt;</a></li>
+            <li><a href="c++_string_中文.html">&lt;string&gt;</a></li>
+            <li><a href="c++_stack_中文.html">&lt;stack&gt;</a></li>
+            <li><a href="c++_algorithm_中文.html">&lt;algorithm&gt;</a></li>
+            <li><a href="c++_queue_中文.html">&lt;queue&gt;</a></li>
+            <li><a href="c++_map_中文.html">&lt;map&gt;</a></li>      
+        </ul>
+        <div class="rightcolumn">
+            <div class="funcblock">
+                <h2>begin</h2>
+                <p>语法: <br><br>
+                    iterator begin();<br>
+                    basic_string &assign( const char *str );
+                    <br>
+                    begin()函数返回一个迭代器指向map的第一个元素。
+                    <br><br>                
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>clear </h2>
+                <p>
+                语法:<br><br>
+                void clear();
+<br><br>
+                clear()函数删除map中的所有元素。
+<br><br>
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>count</h2>
+                <p> 
+                语法:<br> <br>
+                size_type count( const KEY_TYPE &key );
+                <br><br>
+                count()函数返回map中键值等于key的元素的个数。
+<br><br>
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>empty  </h2>
+                <p>
+                语法:<br><br> 
+                bool empty();
+<br><br>
+                empty()函数返回真(true)如果map为空，否则返回假(false)。
+                <br><br>              
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>end</h2>
+                <p>
+                语法:<br> <br>
+                iterator end();<br>       
+                <br><br>
+                end()函数返回一个迭代器指向map的尾部。
+<br><br>               
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>erase</h2>
+                <p>
+                语法:<br> <br>
+                void erase( iterator pos );
+<br>
+                void erase( iterator start, iterator end );
+<br>
+                ssize_type erase( const KEY_TYPE &key );
+               <br><br>
+                find()函数: 
+ <br><br>
+                erase()函数删除在pos位置的元素，或者删除在start和end之间的元素，或者删除那些值为key的所有元素。
+ <br><br>              
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>equal_range</h2>
+                <p>
+                语法:<br> 
+                pair equal_range( const KEY_TYPE &key );
+               <br><br>
+                equal_range()函数返回两个迭代器——一个指向第一个键值为key的元素，另一个指向最后一个键值为key的元素。
+<br>
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>find</h2>
+                <p>
+                语法:<br> 
+                iterator find( const KEY_TYPE &key );
+<br><br>   
+                find()函数返回一个迭代器指向键值为key的元素，如果没找到就返回指向map尾部的迭代器。
+<br>
+               </p>
+            </div>
+            <div class="funcblock">
+                <h2>get_allocator 
+                </h2>
+                <p>
+                语法: <br><br>
+                allocator_type get_allocator();
+<br><br>
+                get_allocator()函数返回map的配置器。
+<br>
+                </p>
+            </div>           
+    </div>
+    <hr style="position:absolute;top: 2255px;left: 10%;" size="1" width="85%">
+    <p id="footer" style="position:absolute;left:40%;top: 2255px;padding-bottom: 15px;">
+        Copyright &copy 2021 What's up小组 All Rights Reserved.
+    </p>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c参考-string</title>
+    <link rel="stylesheet" type="text/css" href="../../style/index.css">
+    <link rel="stylesheet" type="text/css" href="../../style/c-c++参考.css">
+</head> 
+<body style="margin: 0; padding: 0;">
+    <p id="login"><a href="../html/登录界面_中文.html">注册/登录</a></p>
+    <hr size="1" width="85%">
+    <div>
+        <ul class ="guide">
+            <li><a href="../../index.html">首页</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../语言简介二级目录/简介_中文.html">简介</a></dd>
+                    <dd><a href="../语言简介二级目录/发展历史_中文.html">发展历史</a></dd>
+                </dl>
+                <a href="#">语言简介</a>
+            </li>
+            <li><a href="../开发平台_中文.html">开发平台</a></li>
+            <li><a href="../学习资源_中文.html">学习资源</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../C参考_中文.html">c函数库</a></dd>
+                    <dd><a href="../C++参考_中文.html">c++函数库</a></dd>
+                </dl>
+                <a href="#">c/c++参考</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../训练题单.html">基础</a></dd>
+                    <dd><a href="../训练题单.html#进阶">进阶</a></dd>
+                </dl>
+                <a href="#">训练题单</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../项目介绍_中文.html">项目介绍</a></dd>
+                    <dd><a href="../成员介绍_中文.html">成员简介</a></dd>
+                </dl>
+                <a href="#">关于我们</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="leftguide">
+        <ul>
+            <li><a href="c_stdio_中文.html">&lt;stdio.h&gt;</a></li>
+            <li><a href="c_stdlib_中文.html">&lt;stdlib.h&gt;</a></li>
+            <li><a href="c_string_中文.html">&lt;string.h&gt;</a></li>
+            <li><a href="c_math_中文.html">&lt;math.h&gt;</a></li>
+            <li><a href="c_time_中文.html">&lt;time.h&gt;</a></li>
+            <li><a href="c_ctype_中文.html">&lt;ctype.h&gt;</a></li>     
+        </ul>
+        <div class="rightcolumn">
+            
+            <div class="funcblock">
+                <h2>memcpy</h2>
+                <p>
+                语法:<br> 
+                #include &ltstring.h&gt<br>
+                void *memcpy( void *to, const void *from, size_t count );<br><br>
+                函数从from中复制count 个字符到to中，并返回to指针。 如果to 和 from 重叠，则函数行为不确定。
+            </p>
+            </div>
+            <div class="funcblock">
+                <h2>memchr</h2>
+                <p>语法:<br>
+                #include &ltstring.h&gt<br>
+                void *memchr( const void *buffer, int ch, size_t count );<br><br>
+                函数在buffer指向的数组的count个字符的字符串里查找ch 首次出现的位置。返回一个指针，指向ch 在字符串中首次出现的位置, 如果ch 没有在字符串中找到，返回NULL。                y = 6.04;<br>
+               
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>memcmp</h2>
+                <p>语法:<br>
+                #include &ltstring.h&gt<br>
+                int memcmp( const void *buffer1, const void *buffer2, size_t count );<br><br>
+                函数比较buffer1和buffer2的前count个字符。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>memmove</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                void *memmove( void *to, const void *from, size_t count );<br><br>
+                与mencpy相同，不同的是当to 和 from 重叠，函数正常仍能工作。
+            </p>
+            </div>
+            <div class="funcblock">
+                <h2>memset</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                void *memset( void *buffer, int ch, size_t count );<br><br>
+                函数拷贝ch 到buffer 从头开始的count 个字符里, 并返回buffer指针。 memset() 可以应用在将一段内存初始化为某个值。例如：<br><br>
+                memset( the_array, '\0', sizeof(the_array) );<br><br>
+                这是将一个数组的所以分量设置成零的很便捷的方法>。
+                </p>
+            </div>
+    
+            <div class="funcblock">
+                <h2>strcpy</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                    char *strcpy( char *to, const char *from );<br><br>
+                    复制字符串from 中的字符到字符串to，包括空值结束符。返回值为指针to。
+                </p>
+            </div>
+            
+            <div class="funcblock">
+                <h2>strcat</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                char *strcat( char *str1, const char *str2 );<br><br>
+                函数将字符串str2 连接到str1的末端，并返回指针str1。例如：<br><br>
+                printf( "Enter your name: " );<br>
+                scanf( "%s", name );<br>
+                title = strcat( name, " the Great" );<br>
+                printf( "Hello, %s\n", title );
+
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>strchr</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                    char *strchr( const char *str, int ch );<br><br>
+                    函数返回一个指向str 中ch 首次出现的位置，当没有在str 中找ch到返回NULL。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>strcmp</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                    int strcmp( const char *str1, const char *str2 ); <br><br>
+                    比较字符串str1 and str2。
+                </p>
+            </div>
+            
+            <div class="funcblock">
+                <h2>strcspn</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                    size_t strcspn( const char *str1, const char *str2 );<br><br>
+                    函数返回str1 开头连续n个字符都不含字符串str2内字符的字符数。
+                </p>
+            </div>
+            
+            <div class="funcblock">
+                <h2>strlen</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                    size_t strlen( char *str );<br><br>
+                    函数返回字符串str 的长度( 即空值结束符之前字符数目)。
+                </p>
+            </div>
+            
+            <div class="funcblock">
+                <h2>strncat</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                    char *strncat( char *str1, const char *str2, size_t count );<br><br>
+                    将字符串from 中至多count个字符连接到字符串to中，追加空值结束符。返回处理完成的字符串。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>strncmp</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                    int strncmp( const char *str1, const char *str2, size_t count );<br><br>
+                    比较字符串str1 和 str2中至多count个字符。
+                </p>
+            </div>
+           
+            <div class="funcblock">
+                <h2>strncpy</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                double tanh( double arg );<br><br>
+                    函数返回参数arg的双曲正切值。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>strpbrk</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                    char *strncpy( char *to, const char *from, size_t count );<br><br>
+                    将字符串from 中至多count个字符复制到字符串to中。如果字符串from 的长度小于count，其余部分用'\0'填补。返回处理完成的字符串。
+                </p>
+            </div>
+            
+            <div class="funcblock">
+                <h2>strstr</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                    char *strstr( const char *str1, const char *str2 );<br><br>
+                    函数返回一个指针，它指向字符串str2 首次出现于字符串str1中的位置，如果没有找到，返回NULL。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>strtok</h2>
+                <p>语法:<br>#include &ltstring.h&gt<br>
+                    char *strtok( char *str1, const char *str2 );<br><br>
+                    函数返回字符串str1中紧接“标记”的部分的指针, 字符串str2是作为标记的分隔符。如果分隔标记没有找到，函数返回NULL。为了将字符串转换成标记，第一次调用str1 指向作为标记的分隔符。之后所以的调用str1 都应为NULL。
+                </p>
+            </div>
+            
+            
+        </div>
+    </div>
+    <hr style="position:absolute;top: 3920px;left: 10%;" size="1" width="85%">
+    <p id="footer" style="position:absolute;left:40%;top: 3920px;padding-bottom: 15px;">
+        Copyright &copy 2021 What's up小组 All Rights Reserved.
+    </p>
+</body>
+</html4

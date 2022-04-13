@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+    <meta charset="utf-8">  
+    <title>注册界面——What's up C/C++学习平台</title>  
+    <link rel="stylesheet" type="text/css" href="../style/注册界面.css">
+    <style type="text/css">
+       a{position: absolute;
+            
+            color: rgb(11, 182, 250);
+            text-decoration: none;
+        }
+        a:hover{
+            color: rgb(235, 213, 23);
+            text-decoration: underline;
+        }
+        input.bottom:hover{
+            background-color: rgb(245, 166, 19);
+        }
+        body{
+            height: 775px;
+              background-image: linear-gradient(to bottom right, rgb(0, 255, 221), rgb(0, 110, 255));}
+        .flex-body{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 25rem;
+        }
+        .flex-box{
+            position: absolute;
+            top:25%;left:30%;
+            flex-basis: auto;
+            background-color: white;
+            border-radius: 30px;
+            border: 5px darkgrey double;
+            width: 42%;
+            height:23rem;
+        }
+        .put-in{		
+            height: 25px;
+            width: 12rem;
+        }
+        .bottom{
+            position: absolute;
+            left: 45%; 
+            height: 2.5rem; 
+            width: 5rem; 
+            border: 0.1rem gray solid; 
+            background-color: lemonchiffon;
+            font-family: 楷体;
+            font-size: large;
+        }
+        input[type=text]:focus {
+              background-color: rgb(186, 230, 245);
+        }
+        .input_text
+        {
+            position: absolute;
+            left: 25%;
+        }
+        .input_pass
+        {
+            position: absolute;
+            left: 40%;
+        }
+        .picture:hover
+        {
+           background-color: rgb(4, 239, 247);
+           box-shadow:1px 1px 5px #333;
+           -webkit-box-shadow:1px 1px 5px #333;
+           -moz-box-shadow:1px 1px 5px #333;
+        }
+    </style>
+</head>  
+<body>  
+    <div class="flex-body">
+        <div>
+            <img src="" style="width: 100%;height: auto;position: absolute;top: 0;left: 0;z-index: 0;">
+        </div>
+        <div class="flex-box">
+            <a href="../index_英文.html" style="position:absolute;left: 2%;top: 3%;width: 8rem;height: 8rem;" title="Click here to return to the home page" class="picture">
+                <img src="../image/what's up logo.png" style="position:absolute;left: 3%;top: 5%;width: 8rem;height: 8rem;"/>
+            </a>
+            <strong style="position:absolute;left: 26%;font-size: x-large;font-family: 楷体;top: 15%;">What's up C/C++ Learning platform</strong>
+            <label for="username" class="input_text" style="top: 30%;">Account：</label>  
+            <input type="text" id="username" name="username" style="top: 30%;" class="input_pass" placeholder="Please enter an 8-digit account number"/>  
+            <br/>  
+            <label for="userpassword" style="top: 40%;" class="input_text">Password：</label>  
+            <input type="password" id="userpassword" class="input_pass" style="top: 40%;" name="userpassword" placeholder="Please enter your password"/> 
+            <br/>  
+		    <label for="userpassword" style="top: 50%;position: absolute; left: 17%;">Confirm password:</label>
+		    <input type="password" id="userpasswordagain" class="input_pass" style="top: 50%;" name="userpassword" placeholder="Please confirm your password"/> 
+		    <br/> 
+            <p class="input_text" style="top: 55%;">Gender：&nbsp;
+                <input type="radio" name="gender" id="man"><label for="man">Male </label>
+                <input type="radio" name="gender" id="woman"><label for="woman">Female</label>
+                <input type="radio" name="gender" id="unknown"><label for="unknown">Unknown</label></p>
+                <p style="position: absolute;top: 63%;left: 20%;">Do you know programming：&nbsp;
+                <input type="radio" id="well" name="known"><label for="well"> yes</label>
+                <input type="radio" id="normal" style="left: 40%;" name="known"><label for="normal"> emmm</label> 
+                <input type="radio" id="no" name="known"><label for="no">no </label></p>
+            <input type="button" onclick="save()" style="position: absolute; left: 44%;top: 76%;" class="bottom" value="register"/>   
+            <div>
+                <a href="登录界面_英文.html" style="left: 20%;top: 90%;">Existing account?</a>
+            </div>
+            <div>
+                <p style="position: absolute;left: 50%;top: 85%;color: rgb(11, 15, 17);"><strong>|</strong></p>
+            </div>
+            <div>
+                <a href="./注册界面_中文.html" style="left: 60%;top: 90%;">中文</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        loadAll(); 	
+        
+        function save(){
+            var userpassword = document.getElementById("userpassword").value;  
+            var username = document.getElementById("username").value;
+            localStorage.setItem(username,userpassword);
+            alert("Added successfully!");
+            window.location.href="登录界面_英文.html";
+        }
+        function passwordwagain(){
+            var userpassword = document.getElementById("userpassword").value;  
+            var userpasswordagain = document.getElementById("userpasswordagain").value;  
+            if(userpassword==userpasswordagain) save();
+            else alert("Passwords are inconsistent! Please re-enter!");
+        }
+    
+        function find(){  
+            var search_user = document.getElementById("search_user").value;  
+            var userpassword = localStorage.getItem(search_user);  
+            var find_result = document.getElementById("find_result");  
+            find_result.innerHTML = search_user + "'s password is：" + userpassword;  
+        }
+   
+        function loadAll1(){
+            var list4 = document.getElementById("list4");  
+            if(localStorage.length>0){  
+                var result = "<table border='1'>";  
+                result += "<tr><td>key</td><td>value</td></tr>";  
+                for(var i=0;i<localStorage.length;i++){  
+                    var userhead = localStorage.key(i);  
+                    var userq = localStorage.getItem(userhead);
+                    result += "<tr><td>"+userhead+"</td><td>"+userq+"</td></tr>";  
+                }  
+                result += "</table>";  
+                list4.innerHTML = result;  
+            }else{  
+                list4.innerHTML = "Data is empty";  
+            }  
+        }
+        </script>
+</body>  
+</html>

@@ -1,0 +1,21 @@
+.tittle
+        {
+            position: absolute;
+            left: 37%;
+            top: 17%;
+            font-size: xx-large;
+            font-family: 楷体;
+        }
+.text
+        {
+            position: absolute;
+            left: 25%;
+            font-size: x-large;
+            font-family: 楷体;
+        }
+.picture:hover
+        	{
+           box-shadow:1px 1px 5px #333;
+           -webkit-box-shadow:1px 1px 5px #333;
+           -moz-box-shadow:1px 1px 5px #333;
+        	}

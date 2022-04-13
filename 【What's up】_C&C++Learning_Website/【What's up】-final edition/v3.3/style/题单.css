@@ -1,0 +1,91 @@
+.question
+{
+    position: relative;
+    margin-left: 590px;
+    font-size: large;
+    font-family: 新宋体;
+}
+
+.inputClass
+{
+    position: relative;
+    text-align: center;
+}
+
+.liRight
+{
+    position: relative;
+    text-align: center;
+}
+
+.leftbutton
+{
+    position: relative;
+    left: 30%;
+    top:20%;
+    height: 2.5rem; 
+    width: 5rem; 
+    border: 0.1rem gray solid; 
+    background-color: lemonchiffon;
+}
+
+.rightbutton
+{
+    position: relative;
+    left: 47%;
+    top:20%;
+    height: 2.5rem; 
+    width: 5rem; 
+    border: 0.1rem gray solid; 
+    background-color: lemonchiffon;
+}
+
+.centerbutton
+{
+    position: relative;
+    left:44.0%;
+    height: 2.5rem; 
+    width: 10rem; 
+    border: 0.1rem gray solid; 
+    background-color: lemonchiffon;
+    font-family: 宋体;
+    font-size: large;
+}
+
+.question_tg
+{
+    position: relative;
+    left: 33%;
+    font-family: 宋体;
+    font-size: x-large;
+}
+
+.text
+{
+    position: relative;
+    text-align: center;
+    font-family: 宋体;
+    font-size: large;
+}
+
+input.leftbutton:hover{
+    background-color: lawngreen;
+}
+
+input.rightbutton:hover{
+    background-color: lawngreen;
+}
+
+button.centerbutton:hover{
+    background-color: lawngreen;
+}
+
+label.text:hover
+{
+    background-color: lawngreen;
+}
+
+a:hover{
+    color: rgb(235, 213, 23);
+    text-decoration: underline;
+}

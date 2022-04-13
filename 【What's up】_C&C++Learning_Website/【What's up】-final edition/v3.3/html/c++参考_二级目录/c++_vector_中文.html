@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c++参考-vector</title>
+    <link rel="stylesheet" type="text/css" href="../../style/index.css">
+    <link rel="stylesheet" type="text/css" href="../../style/c-c++参考.css">
+</head> 
+<body style="margin: 0; padding: 0;">
+    <p id="login"><a href="../html/登录界面_中文.html">注册/登录</a></p>
+    <hr size="1" width="85%">
+    <div>
+        <ul class ="guide">
+            <li><a href="../../index.html">首页</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../语言简介二级目录/简介_中文.html">简介</a></dd>
+                    <dd><a href="../语言简介二级目录/发展历史_中文.html">发展历史</a></dd>
+                </dl>
+                <a href="#">语言简介</a>
+            </li>
+            <li><a href="../开发平台_中文.html">开发平台</a></li>
+            <li><a href="../学习资源_中文.html">学习资源</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../C参考_中文.html">c函数库</a></dd>
+                    <dd><a href="../C++参考_中文.html">c++函数库</a></dd>
+                </dl>
+                <a href="#">c/c++参考</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../训练题单.html">基础</a></dd>
+                    <dd><a href="../登录界面_英文.html#进阶">进阶</a></dd>
+                </dl>
+                <a href="#">训练题单</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../项目介绍_中文.html">项目介绍</a></dd>
+                    <dd><a href="../成员介绍_中文.html">成员简介</a></dd>
+                </dl>
+                <a href="#">关于我们</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="leftguide">
+        <ul>
+            <li><a href="c++_vector_中文.html">&lt;vector&gt;</a></li>
+            <li><a href="c++_string_中文.html">&lt;string&gt;</a></li>
+            <li><a href="c++_stack_中文.html">&lt;stack&gt;</a></li>
+            <li><a href="c++_algorithm_中文.html">&lt;algorithm&gt;</a></li>
+            <li><a href="c++_queue_中文.html">&lt;queue&gt;</a></li>
+            <li><a href="c++_map_中文.html">&lt;map&gt;</a></li>      
+        </ul>
+        <div class="rightcolumn">
+            <div class="funcblock">
+                <h2>at</h2>
+                <p>语法: <br><br>
+                    TYPE at( size_type loc );<br><br>
+                    at() 函数 返回当前Vector指定位置loc的元素的引用. at() 函数 比 [] 运算符更加安全, 因为它不会让你去访问到Vector内越界的元素。例如, 考虑下面的代码:<br><br>
+                    vector<int> v( 5, 1 );<br><br>
+                        for( int i = 0; i < 10; i++ ) {
+                            <br>
+                            cout << "Element " << i << " is " << v[i] << endl;
+                            <br>
+                        }<br><br>
+                        这段代码访问了vector末尾以后的元素,这将可能导致很危险的结果.以下的代码将更加安全: <br><br> 
+                        vector<int> v( 5, 1 );
+                            <br><br>
+                            for( int i = 0; i < 10; i++ ) {<br>
+                                cout << "Element " << i << " is " << v.at(i) << endl;<br> 
+                            }               
+                <br><br>
+                取代试图访问内存里非法值的作法,at() 函数能够辨别出访问是否越界并在越界的时候抛出一个异常。
+<br>           
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>assign</h2>
+                <p>
+                语法:<br><br>
+                void assign( input_iterator start, input_iterator end );<br>
+                void assign( size_type num, const TYPE &val );
+<br><br>
+                assign() 函数要么将区间[start, end)的元素赋到当前vector,或者赋num个值为val的元素到vector中。这个函数将会清除掉为vector赋值以前的内容。<br>
+               </p>
+            </div>
+            <div class="funcblock">
+                <h2>begin</h2>
+                <p> 
+                语法:<br><br> 
+                iterator begin();<br><br>
+                begin()函数返回一个指向当前vector起始元素的迭代器。例如,下面这段使用了一个迭代器来显示出vector中的所有元素:
+<br><br>
+                vector<int> v1( 5, 789 );
+    <br>
+                vector<int>::iterator it;
+        <br>
+                for( it = v1.begin(); it != v1.end(); it++ )
+        <br>
+                cout << *it << endl;
+        <br>
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>capacity</h2>
+                <p>
+                语法:<br><br> 
+                size_type capacity();<br><br>
+                capacity() 函数 返回当前vector在重新进行内存分配以前所能容纳的元素数量。
+                <br><br>            
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>clear</h2>
+                <p>
+                语法:<br> <br>
+                void clear();<br><br>
+                clear()函数删除当前vector中的所有元素。
+                <br><br>               
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>empty</h2>
+                <p>
+                语法:<br> <br>
+                bool empty();
+<br><br>
+                如果当前vector没有容纳任何元素,则empty()函数返回true,否则返回false。<br><br>           
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>end</h2>
+                <p>
+                语法:<br> <br>
+                iterator end();
+                <br><br>
+                end() 函数返回一个指向当前vector末尾元素的下一位置的迭代器.注意,如果你要访问末尾元素,需要先将此迭代器自减1。
+<br>
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>insert</h2>
+                <p>
+                语法:<br><br> 
+                iterator insert( iterator loc, const TYPE &val );
+<br>
+                void insert( iterator loc, size_type num, const TYPE &val );
+<br>
+                void insert( iterator loc, input_iterator start, input_iterator end );
+<br><br>   
+                insert() 函数有以下三种用法: <br><br>
+                在指定位置loc前插入值为val的元素,返回指向这个元素的迭代器, <br>
+                在指定位置loc前插入num个值为val的元素 <br>
+                在指定位置loc前插入区间[start, end)的所有元素。<br>
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>max_size</h2>
+                <p>
+                语法: <br><br>
+                size_type max_size();
+<br><br>
+                max_size() 函数返回当前vector所能容纳元素数量的最大值(译注:包括可重新分配内存)。
+<br>
+                </p>
+            </div>
+            
+    </div>
+    <hr style="position:absolute;top: 2705px;left: 10%;" size="1" width="85%">
+    <p id="footer" style="position:absolute;left:40%;top: 2705px;padding-bottom: 15px;">
+        Copyright &copy 2021 What's up小组 All Rights Reserved.
+    </p>
+</body>
+</html>

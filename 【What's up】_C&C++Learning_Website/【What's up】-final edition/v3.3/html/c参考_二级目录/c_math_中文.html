@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c参考-math</title>
+    <link rel="stylesheet" type="text/css" href="../../style/index.css">
+    <link rel="stylesheet" type="text/css" href="../../style/c-c++参考.css">
+</head> 
+<body style="margin: 0; padding: 0;">
+    <p id="login"><a href="../html/登录界面_中文.html">注册/登录</a></p>
+    <hr size="1" width="85%">
+    <div>
+        <ul class ="guide">
+            <li><a href="../../index.html">首页</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../语言简介二级目录/简介_中文.html">简介</a></dd>
+                    <dd><a href="../语言简介二级目录/发展历史_中文.html">发展历史</a></dd>
+                </dl>
+                <a href="#">语言简介</a>
+            </li>
+            <li><a href="../开发平台_中文.html">开发平台</a></li>
+            <li><a href="../学习资源_中文.html">学习资源</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../C参考_中文.html">c函数库</a></dd>
+                    <dd><a href="../C++参考_中文.html">c++函数库</a></dd>
+                </dl>
+                <a href="#">c/c++参考</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../训练题单.html">基础</a></dd>
+                    <dd><a href="../训练题单.html#进阶">进阶</a></dd>
+                </dl>
+                <a href="#">训练题单</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../项目介绍_中文.html">项目介绍</a></dd>
+                    <dd><a href="../成员介绍_中文.html">成员简介</a></dd>
+                </dl>
+                <a href="#">关于我们</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="leftguide">
+        <ul>
+            <li><a href="c_stdio_中文.html">&lt;stdio.h&gt;</a></li>
+            <li><a href="c_stdlib_中文.html">&lt;stdlib.h&gt;</a></li>
+            <li><a href="c_string_中文.html">&lt;string.h&gt;</a></li>
+            <li><a href="c_math_中文.html">&lt;math.h&gt;</a></li>
+            <li><a href="c_time_中文.html">&lt;time.h&gt;</a></li>
+            <li><a href="c_ctype_中文.html">&lt;ctype.h&gt;</a></li>     
+        </ul>
+        <div class="rightcolumn">
+            <div class="funcblock">
+                <h2>fabs</h2>
+                <p>
+                语法:<br>
+                #include &ltmath.h&gt<br>
+                double fabs( double arg );<br><br>
+                函数返回参数arg的绝对值。             </p>
+            </div>
+            <div class="funcblock">
+                <h2>acos</h2>
+                <p> 
+                语法:<br> 
+                #include &ltmath.h&gt<br>
+                double acos( double arg );<br><br>
+                函数返回参数arg的反余弦值。参数arg 应当在-1和1之间。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>asin</h2>
+                <p>
+                语法:<br> 
+                #include &ltmath.h&gt<br>
+                double asin( double arg );<br><br>
+                函数返回参数arg的反正弦值。参数arg 应当在-1和1之间。
+            </p>
+            </div>
+            <div class="funcblock">
+                <h2>atan</h2>
+                <p>
+                语法: <br>
+                #include &ltmath.h&gt<br>
+                double atan( double arg );<br><br>
+                函数返回参数arg的反正切值。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>atan2</h2>
+                <p>
+                语法:<br> 
+                #include &ltmath.h&gt<br>
+                double atan2( double y, double x );<br><br>
+                函数计算y/x的反正切值，按照参数的符号计算所在的象限。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>ceil</h2>
+                <p>语法:<br>
+                #include &ltmath.h&gt<br>
+                double ceil( double num );<br><br>
+                函数返回参数不小于num 的最小整数。例如：<br><br>
+                y = 6.04;<br>
+                x = ceil( y );<br><br>
+                x为7.0.
+
+
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>cos</h2>
+                <p>语法:<br>
+                #include &ltmath.h&gt<br>
+                double cos( double arg );<br><br>
+                函数返回参数arg的余弦值，arg以弧度表示给出。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>cosh</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>double cosh( double arg );<br><br>
+                    函数返回参数arg的双曲余弦值。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>exp</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>
+                double exp( double arg );<br><br>
+                函数返回参数returns e (2.7182818) 的arg次幂。  
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>floor</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>
+                double floor( double arg );<br><br>
+                函数返回参数不大于arg的最大整数。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>fmod</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>
+                double fmod( double x, double y );<br><br>
+                函数返回参数x/y的余数。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>frexp</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>int tolower( int ch );<br><br>
+                    函数字符ch的小写形式。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>ldexp</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>double frexp( double num, int *exp );<br><br>
+                    函数将参数num 分成两部分： 0.5 和1之间的尾数（由函数返回）并返回指数exp。转换成如下的科学计数法形式：<br><br>
+                    num = mantissa * (2 ^ exp);
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>modf</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>double modf( double num, double *i );                    <br><br>
+                    函数将参数num 分割为整数和小数，返回小数部分并将整数部分赋给i。
+                </p>
+            </div>
+            
+            <div class="funcblock">
+                <h2>log</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>double log( double num );<br><br>
+                    函数返回参数num的自然对数。如果num为负,产生域错误；如果num 为零，产生范围错误。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>log10</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>double log10( double num );<br><br>
+                    函数返回参数num以10为底的对数。如果num为负,产生域错误；如果num 为零，产生范围错误。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>pow</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>double pow( double base, double exp ); <br><br>
+                    函数返回以参数base 为底的exp 次幂。如果base为零或负和exp 小于等于零或非整数时,产生域错误。如果溢出，产生范围错误。
+                </p>
+            </div>
+            
+            <div class="funcblock">
+                <h2>sin</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>double sin( double arg );<br><br>
+                    数返回参数arg的正弦值，arg以弧度表示给出。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>sinh</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>double sinh( double arg );<br><br>
+                    函数返回参数arg的双曲正弦值。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>sqrt</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>double sqrt( double num );<br><br>
+                    函数返回参数num的平方根。如果num为负,产生域错误。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>tan</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>double tan( double arg );<br><br>
+                    函数返回参数arg的正切值，arg以弧度表示给出。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>tanh</h2>
+                <p>语法:<br>#include &ltmath.h&gt<br>double tanh( double arg );<br><br>
+                    函数返回参数arg的双曲正切值。
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    <hr style="position:absolute;top: 4865px;left: 10%;" size="1" width="85%">
+    <p id="footer" style="position:absolute;left:40%;top: 4865px;padding-bottom: 15px;">
+        Copyright &copy 2021 What's up小组 All Rights Reserved.
+    </p>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c参考-stdio</title>
+    <link rel="stylesheet" type="text/css" href="../../style/index.css">
+    <link rel="stylesheet" type="text/css" href="../../style/c-c++参考.css">
+</head> 
+<body style="margin: 0; padding: 0;">
+    <p id="login"><a href="../html/登录界面_中文.html">注册/登录</a></p>
+    <hr size="1" width="85%">
+    <div>
+        <ul class ="guide">
+            <li><a href="../../index.html">首页</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../语言简介二级目录/简介_中文.html">简介</a></dd>
+                    <dd><a href="../语言简介二级目录/发展历史_中文.html">发展历史</a></dd>
+                </dl>
+                <a href="#">语言简介</a>
+            </li>
+            <li><a href="../开发平台_中文.html">开发平台</a></li>
+            <li><a href="../学习资源_中文.html">学习资源</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../C参考_中文.html">c函数库</a></dd>
+                    <dd><a href="../C++参考_中文.html">c++函数库</a></dd>
+                </dl>
+                <a href="#">c/c++参考</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../训练题单.html">基础</a></dd>
+                    <dd><a href="../训练题单.html#进阶">进阶</a></dd>
+                </dl>
+                <a href="#">训练题单</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../项目介绍_中文.html">项目介绍</a></dd>
+                    <dd><a href="../成员介绍_中文.html">成员简介</a></dd>
+                </dl>
+                <a href="#">关于我们</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="leftguide">
+        <ul>
+            <li><a href="c_stdio_中文.html">&lt;stdio.h&gt;</a></li>
+            <li><a href="c_stdlib_中文.html">&lt;stdlib.h&gt;</a></li>
+            <li><a href="c_string_中文.html">&lt;string.h&gt;</a></li>
+            <li><a href="c_math_中文.html">&lt;math.h&gt;</a></li>
+            <li><a href="c_time_中文.html">&lt;time.h&gt;</a></li>
+            <li><a href="c_ctype_中文.html">&lt;ctype.h&gt;</a></li>     
+        </ul>
+        <div class="rightcolumn">
+            <div class="funcblock">
+                <h2>printf</h2>
+                <p>语法: <br>
+                #include &ltstdio.h&gt<br>
+                int printf( const char *format, ... );<br><br>
+                printf()函数根据format(格式)给出的格式打印输出到STDOUT(标准输出)和其它参数中。字符串format(格式)由两类项目组成——显示到屏幕上的字符和定义printf()显示的其它参数。基本上, 你可以指定一个包含文本在内的format(格式)字符串,也可以是映射到printf()其它参数的"特殊"字符。例如本代码：<br><br>
+                char name[20] = "Bob";<br>
+                int age = 21;<br>
+                printf( "Hello %s, you are %d years old.\n", name, age );<br><br>
+                显示下列输出:<br> 
+                Hello Bob, you are 21 years old.<br><br>
+                %s 表示：在这里插入首个参数,一个字符串。 %d 表示第二个参数(一个整数)应该放置在那里。不同的"%-codes"表示不同的变量类型, 也可以限制变量的长度。一个位于一个%和格式化命令间的整数担当着一个最小字段宽度说明符,并且加上足够多的空格或0使输出足够长。如果你想填充0,在最小字段宽度说明符前放置0。你可以使用一个精度修饰符,它可以根据使用的格式代码而有不同的含义。用%e, %E和 %f,精度修饰符让您指定想要的小数位数。例如：
+                <br><br>
+                %12.6f
+                <br> <br>   
+                将会至少显示12位数字,并带有6位小数的浮点数。<br>
+                printf()的返回值是打印的字符数,如果发生错误则返回一个负值。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>getchar</h2>
+                <p>
+                语法:<br>
+                #include &ltstdio.h&gt<br>
+                int getchar( void );<br><br>
+                getchar()函数从STDIN(标准输入)获取并返回下一个字符,如果到达文件尾返回EOF。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>putchar</h2>
+                <p> 
+                语法:<br> 
+                #include &ltstdio.h&gt<br>
+                int putchar( int ch );<br><br>
+                putchar()函数把ch写到STDOUT(标准输出)。代码<br><br>
+                putchar( ch );<br>
+                putc( ch, STDOUT );<br><br>
+                二者功能一样。<br>
+                putchar()的返回值是被写的字符, 发生错误时返回EOF。 
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>fopen</h2>
+                <p>
+                语法:<br> 
+                #include &ltstdio.h&gt<br>
+                FILE *fopen( const char *fname, const char *mode );<br><br>
+                fopen()函数打开由fname(文件名)指定的文件, 并返回一个关联该文件的流。如果发生错误, fopen()返回NULL。mode(方式)是用于决定文件的用途，下面列出了常见的打开文件方式及其含义。<br>
+                <table cellspacing="10" style="font-family: 新宋体;">
+                    <tr>
+                        <td>"r"</td><td>打开一个用于读取的文本文件</td>
+                    </tr>
+                    <tr>
+                        <td>"w"</td><td>创建一个用于写入的文本文件</td>
+                    </tr>
+                    <tr>
+                        <td>"a"</td><td>附加到一个文本文件</td>
+                    </tr>
+                    <tr>
+                        <td>"rb"</td><td>打开一个用于读取的二进制文件</td>
+                    </tr>
+                    <tr>
+                        <td>"wb"</td><td>创建一个用于写入的二进制文件</td>
+                    </tr>
+                    <tr>
+                        <td>"ab"</td><td>附加到一个二进制文件</td>
+                    </tr>
+                    <tr>
+                        <td>"r+"</td><td>打开一个用于读/写的文本文件</td>
+                    </tr>
+                    <tr>
+                        <td>"w+"</td><td>创建一个用于读/写的文本文件</td>
+                    </tr>
+                    <tr>
+                        <td>"a+"</td><td>打开一个用于读/写的文本文件</td>
+                    </tr>
+                    <tr>
+                        <td>"rb+"</td><td>打开一个用于读/写的二进制文件</td>
+                    </tr>
+                    <tr>
+                        <td>"wb+"</td><td>创建一个用于读/写的二进制文件</td>
+                    </tr>
+                    <tr>
+                        <td>"ab+"</td><td>打开一个用于读/写的二进制文件</td>
+                    </tr>
+                </table>
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>freopen</h2>
+                <p>
+                语法:<br> 
+                #include &ltstdio.h&gt<br>
+                FILE *freopen( const char *fname, const char *mode, FILE *stream );<br><br>
+                freopen()函数常用于再分配一个以存在的流给一个不同的文件和方式(mode)。在调用本函数后,给出的文件流将会用mode(方式)指定的访问模式引用fname(文件名)。freopen()的返回值是新的文件流,发生错误时返回NULL。<br>   
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>fclose</h2>
+                <p>
+                语法:<br> 
+                #include &ltstdio.h&gt<br>
+                int fclose( FILE *stream );<br><br>
+                函数fclose()关闭给出的文件流, 释放已关联到流的所有缓冲区. fclose()执行成功时返回0,否则返回EOF。<br>  
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>remove</h2>
+                <p>
+                语法:<br> 
+                #include &ltstdio.h&gt<br>
+                int remove( const char *fname );<br><br>
+                remove()函数删除由fname(文件名)指定的文件。remove()成功时返回0,如果发生错误返回非零。<br>
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>rename</h2>
+                <p>
+                语法:<br> 
+                #include &ltstdio.h&gt<br>
+                int rename( const char *oldfname, const char *newfname );<br><br>
+                函数rename()更改文件oldfname的名称为newfname。rename()成功时返回0,错误时返回非零。<br>   
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>fprintf</h2>
+                <p>
+                语法: <br>
+                #include &ltstdio.h&gt<br>
+                int fprintf( FILE *stream, const char *format, ... );<br><br>
+                fprintf()函数根据指定的format(格式)(格式)发送信息(参数)到由stream(流)指定的文件。fprintf()只能和printf()一样工作。fprintf()的返回值是输出的字符数,发生错误时返回一个负值。<br> <br> 
+                示例:<br><br>
+                char name[20] = "Mary";<br>
+                FILE *out;<br>
+                out = fopen( "output.txt", "w" );<br>
+                if( out != NULL )<br>
+                fprintf( out, "Hello %s\n", name );<br>
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>scanf</h2>
+                <p>
+                语法: 
+                #include &ltstdio.h&gt<br>
+                int scanf( const char *format, ... );<br><br>
+                scanf()函数根据由format(格式)指定的格式从stdin(标准输入)读取,并保存数据到其它参数。它和printf()有点类似。format(格式)字符串由控制字符,空白字符和非空白字符组成。控制字符以一个%符号开始,如下: 
+                <table cellspacing="10" style="font-family: 新宋体;">
+                    <tr>
+                        <td>%c</td><td>一个单一的字符</td>
+                    </tr>
+                    <tr>
+                        <td>%d</td><td>一个十进制整数</td>
+                    </tr>
+                    <tr>
+                        <td>%i</td><td>一个整数</td>
+                    </tr>
+                    <tr>
+                        <td>%e,%f,%g</td><td>一个浮点数</td>
+                    </tr>
+                    <tr>
+                        <td>%o</td><td>一个八进制数</td>
+                    </tr>
+                    <tr>
+                        <td>%s</td><td>一个字符串</td>
+                    </tr>
+                    <tr>
+                        <td>%x</td><td>一个十六进制数</td>
+                    </tr>
+                    <tr>
+                        <td>%p</td><td>一个指针</td>
+                    </tr>
+                    <tr>
+                        <td>%n</td><td>一个等于读取字符数量的整数</td>
+                    </tr>
+                    <tr>
+                        <td>%u</td><td>一个无符号整数</td>
+                    </tr>
+                    <tr>
+                        <td>%[]</td><td>一个字符集</td>
+                    </tr>
+                    <tr>
+                        <td>%%</td><td>一个精度符号</td>
+                    </tr>
+                </table>
+                <p>读取匹配format(格式)字符串的输入。当读取到一个控制字符, 它把值放置到下一个变量。空白(tabs, 空格等等)会跳过。非空白字符和输入匹配, 然后丢弃。如果是一个在%符号和控制符间的数量, 那么只有指定数量的字符转换到变量中。如果scanf()遇到一个字符集(用%[]控制字符表示), 那么在括号中的任意字符都会读取到变量中。scanf()的返回值是成功赋值的变量数量, 发生错误时返回EOF。</p>
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>fscanf</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>int fscanf( FILE *stream, const char *format, ... );<br><br>函数fscanf()以scanf()的执行方式从给出的文件流中读取数据。fscanf()的返回值是事实上已赋值的变量的数,如果未进行任何分配时返回EOF。  
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>fgetc</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>int fgetc( FILE *stream );<br><br>fgetc()函数返回来自stream(流)中的下一个字符,如果到达文件尾或者发生错误时返回EOF。 
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>fgets</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>char *fgets( char *str, int num, FILE *stream );<br><br>函数fgets()从给出的文件流中读取[num - 1]个字符并且把它们转储到str(字符串)中。fgets()在到达行末时停止,在这种情况下,str(字符串)将会被一个新行符结束。如果fgets()达到[num - 1]个字符或者遇到EOF, str(字符串)将会以null结束。fgets()成功时返回str(字符串),失败时返回NULL。 
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>fputc</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>int fputc( int ch, FILE *stream );<br><br>函数fputc()把给出的字符ch写到给出的输出流。返回值是字符, 发生错误时返回值是EOF。  
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>fputs</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>int fputs( const char *str, FILE *stream );<br><br>fputs()函数把str(字符串)指向的字符写到给出的输出流。成功时返回非负值, 失败时返回EOF。 
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>getc</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>int getc( FILE *stream );<br><br>getc()函数从stream(流)获取并返回下一个字符,如果到达文件尾返回EOF。getc()和fgetc()是一样的。例如:<br><br> 
+                    char ch;<br>
+                    FILE *input = fopen( "stuff", "r" );<br>
+                    ch = getc( input );<br>
+                    while( ch != EOF ) {<br>
+                    &nbsp;&nbsp;printf( "%c", ch );<br>
+                    &nbsp;&nbsp;ch = getc( input );<br>
+                    }
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>getchar</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>int getchar( void );<br><br>getchar()函数从STDIN(标准输入)获取并返回下一个字符,如果到达文件尾返回EOF。 
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>gets</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>char *gets( char *str );<br><br>gets()函数从STDIN(标准输入)读取字符并把它们加载到str(字符串)里,直到遇到新行(\n)或到达EOF。新行字符翻译为一个null中断符。gets()的返回值是读入的字符串,如果错误返回NULL。  
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>putchar</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>int putchar( int ch );<br><br>putchar()函数把ch写到STDOUT(标准输出)。代码<br> 
+                putchar( ch );&nbsp和&nbspputc( ch, STDOUT );&nbsp一样。<br> 
+                putchar()的返回值是被写的字符, 发生错误时返回EOF。 
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>puts</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>int puts( char *str );<br><br>函数puts()把str(字符串)写到STDOUT(标准输出)上。puts() 成功时返回非负值, 失败时返回EOF。  
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>fread</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>int fread( void *buffer, size_t size, size_t num, FILE *stream );<br><br>函数fread()读取[num]个对象(每个对象大小为size(大小)指定的字节数),并把它们替换到由buffer(缓冲区)指定的数组。数据来自给出的输入流. 函数的返回值是读取的内容数量。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>fwrite</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>int fwrite( const void *buffer, size_t size, size_t count, FILE *stream );<br><br>fwrite()函数从数组buffer(缓冲区)中, 写count个大小为size(大小)的对象到stream(流)指定的流。返回值是已写的对象的数量。 
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>ftell</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>long ftell( FILE *stream );<br><br>ftell()函数返回stream(流)当前的文件位置,如果发生错误返回-1。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>rewind</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>void rewind( FILE *stream );<br><br>函数rewind()把文件指针移到由stream(流)指定的开始处, 同时清除和流相关的错误和EOF标记。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>feof</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>int feof( FILE *stream );<br><br>函数feof()在到达给出的文件流的文件尾时返回一个非零值。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>ferror</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>int ferror( FILE *stream );<br><br>ferror()函数检查stream(流)中的错误, 如果没发生错误返回0,否则返回非零。如果发生错误, 使用perror()检测发生什么错误。 
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>perror</h2>
+                <p>语法:<br>#include &ltstdio.h&gt<br>void perror( const char *str );<br><br>perror()函数打印str(字符串)和一个相应的执行定义的错误消息到全局变量errno中。
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr style="position:absolute;top: 7485px;left: 10%;" size="1" width="85%">
+    <p id="footer" style="position:absolute;left:40%;top: 7485px;padding-bottom: 15px;">
+        Copyright &copy 2021 What's up小组 All Rights Reserved.
+    </p>
+</body>
+</html>

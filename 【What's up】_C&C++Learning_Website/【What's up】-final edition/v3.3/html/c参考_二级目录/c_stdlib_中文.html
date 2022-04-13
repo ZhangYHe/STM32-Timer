@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c参考-stdlib</title>
+    <link rel="stylesheet" type="text/css" href="../../style/index.css">
+    <link rel="stylesheet" type="text/css" href="../../style/c-c++参考.css">
+</head> 
+<body style="margin: 0; padding: 0;">
+    <p id="login"><a href="../html/登录界面_中文.html">注册/登录</a></p>
+    <hr size="1" width="85%">
+    <div>
+        <ul class ="guide">
+            <li><a href="../../index.html">首页</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../语言简介二级目录/简介_中文.html">简介</a></dd>
+                    <dd><a href="../语言简介二级目录/发展历史_中文.html">发展历史</a></dd>
+                </dl>
+                <a href="#">语言简介</a>
+            </li>
+            <li><a href="../开发平台_中文.html">开发平台</a></li>
+            <li><a href="../学习资源_中文.html">学习资源</a></li>
+            <li>
+                <dl>
+                    <dd><a href="../C参考_中文.html">c函数库</a></dd>
+                    <dd><a href="../C++参考_中文.html">c++函数库</a></dd>
+                </dl>
+                <a href="#">c/c++参考</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../训练题单.html">基础</a></dd>
+                    <dd><a href="../训练题单.html#进阶">进阶</a></dd>
+                </dl>
+                <a href="#">训练题单</a>
+            </li>
+            <li>
+                <dl>
+                    <dd><a href="../项目介绍_中文.html">项目介绍</a></dd>
+                    <dd><a href="../成员介绍_中文.html">成员简介</a></dd>
+                </dl>
+                <a href="#">关于我们</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="leftguide">
+        <ul>
+            <li><a href="c_stdio_中文.html">&lt;stdio.h&gt;</a></li>
+            <li><a href="c_stdlib_中文.html">&lt;stdlib.h&gt;</a></li>
+            <li><a href="c_string_中文.html">&lt;string.h&gt;</a></li>
+            <li><a href="c_math_中文.html">&lt;math.h&gt;</a></li>
+            <li><a href="c_time_中文.html">&lt;time.h&gt;</a></li>
+            <li><a href="c_ctype_中文.html">&lt;ctype.h&gt;</a></li>     
+        </ul>
+        <div class="rightcolumn">
+            <div class="funcblock">
+                <h2>exit</h2>
+                <p>
+                语法:<br>
+                #include &ltstdlib.h&gt<br>
+                exit( int exit_code );<br><br>
+                终止程序的执行。参数exit_code 传递给返回值，通常零值表示正常结束，非零值表示应错误返回。                </p>
+            </div>
+            <div class="funcblock">
+                <h2>atof</h2>
+                <p> 
+                语法:<br> 
+                #include &ltstdlib.h&gt<br>
+                double atof( const char *str );<br><br>
+                将字符串str转换成一个双精度数值并返回结果。 参数str 必须以有效数字开头,但是允许以“E”或“e”除外的任意非数字字符结尾。例如：<br><br>
+                x = atof( "42.0is_the_answer" );<br><br>
+                x的值为42.0. 
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>atol</h2>
+                <p>
+                语法:<br> 
+                #include &ltstdlib.h&gt<br>
+                long atol( const char *str );<br><br>
+                将字符串转换成长整型数并返回结果。函数会扫描参数str字符串，跳过前面的空格字符，直到遇上数字或正负符号才开始做转换，而再遇到非数字或字符串结束时才结束转换，并将结果返回。例如:<br><br>   
+                x = atol( "1024.0001" );<br><br>
+                x的值为1024L.
+            </p>
+            </div>
+            <div class="funcblock">
+                <h2>strtod </h2>
+                <p>
+                语法:<br> 
+                #include &ltstdlib.h&gt<br>
+                double strtod( const char *start, char **end );<br><br>
+                函数返回带符号的字符串start所表示的浮点型数。字符串end 指向所表示的浮点型数之后的部分。如果溢出发生，返回HUGE_VAL或 -HUGE_VAL。 
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>strtol</h2>
+                <p>
+                语法:<br> 
+                #include &ltstdlib.h&gt<br>
+                long strtol( const char *start, char **end, int base );<br><br>
+                函数返回带符号的字符串start所表示的长整型数。参数base代表采用的进制方式。指针end 指向start所表示的整型数之后的部分。如果返回值无法用长整型表示，函数则返回LONG_MAX或LONG_MIN. 错误发生时，返回零。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>rand</h2>
+                <p>
+                语法: <br>
+                #include &ltstdlib.h&gt<br>
+                int rand( void );<br><br>
+                函数返回一个在零到RAND_MAX 之间的伪随机整数。例如：    srand( time(NULL) );    for( i = 0; i < 10; i++ )      printf( "Random number #%d: %d\n", i, rand() ); 
+               
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>srand</h2>
+                <p>
+                语法: 
+                #include &ltstdlib.h&gt<br>
+                void srand( unsigned seed );<br><br>
+                设置rand()随机序列种子。对于给定的种子seed, rand()会反复产生特定的随机序列。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>calloc</h2>
+                <p>语法:<br>
+                #include &ltstdlib.h&gt<br>
+                void *calloc( size_t num, size_t size );<br><br>
+                函数返回一个指向num 数组空间，每一数组元素的大小为size。如果错误发生返回NULL。
+
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>malloc</h2>
+                <p>语法:<br>
+                #include &ltstdlib.h&gt<br>
+                void *malloc( size_t size );<br><br>
+                函数指向一个大小为size的空间，如果错误发生返回NULL。 存储空间的指针必须为堆，不能是栈。这样以便以后用free函数释放空间。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>realloc</h2>
+                <p>语法:<br>#include &ltstdlib.h&gt<br>void *realloc( void *ptr, size_t size );<br><br>
+                函数将ptr 对象的储存空间改变为给定的大小size。 参数size可以是任意大小，大于或小于原尺寸都可以。 返回值是指向新空间的指针，如果错误发生返回NULL。                </p>
+            </div>
+            <div class="funcblock">
+                <h2>free</h2>
+                <p>语法:<br>#include &ltstdlib.h&gt<br>void free( void *ptr );<br><br>
+                    函数释放指针ptr指向的空间，以供以后使用。指针ptr 必须由先前对malloc(), calloc(), realloc()的调用返回。  
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>abort</h2>
+                <p>语法:<br>#include &ltstdlib.h&gt<br>void abort( void );<br><br>终止程序的执行。返回值依赖于执行，可以通过返回值显示错误。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>atexit</h2>
+                <p>语法:<br>#include &ltstdlib.h&gt<br>atexit( void (*func)(void) );<br><br>
+                当程序终止执行时，函数调用函数指针func所指向的函数。可以执行多重调用(至少32个)，这些函数以其注册的倒序执行。执行成功返回零值，失败则返回非零值。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>getenv</h2>
+                <p>语法:<br>#include &ltstdlib.h&gt<br>char *getenv( const char *name );<br><br>函数返回环境变量name的值，非常依赖执行情况。如果无对应的环境变量name返回NULL。
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>bsearch</h2>
+                <p>语法:<br>#include &ltstdlib.h&gt<br>void *bsearch( const void *key, const void *buf, size_t num, size_t size, int (*compare)(const void *, const void *) );<br><br>
+                    函数用折半查找法在从数组元素buf[0]到buf[num-1] 匹配参数key。如果函数compare 的第一个参数小于第二个参数，返回负值；如果等于返回零值；如果大于返回正值。数组buf 中的元素应以升序排列。函数bsearch()的返回值是指向匹配项，如果没有发现匹配项，返回NULL。                </p>
+            </div>
+            <div class="funcblock">
+                <h2>qsort</h2>
+                <p>语法:<br>#include &ltstdlib.h&gt<br>void qsort( void *buf, size_t num, size_t size, int (*compare)(const void *, const void *) );<br><br>
+                    对buf 指向的数据(包含num 项,每项的大小为size)进行快速排序。如果函数compare 的第一个参数小于第二个参数，返回负值；如果等于返回零值；如果大于返回正值。函数对buf 指向的数据按升序排序。 
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>abs</h2>
+                <p>语法:<br>#include &ltstdlib.h&gt<br>int abs( int num );<br><br>函数返回参数num.的绝对值。  
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>div</h2>
+                <p>语法:<br>#include &ltstdlib.h&gt<br> div_t div( int numerator, int denominator );<br><br>
+                    函数返回参数numerator / denominator的商和余数。结构类型div_t定义在stdlib.h中:<br><br>
+                    int quot;     // 商数<br>
+                    int rem;      // 余数<br><br>
+                    例, 以下代码显示x/y的商和余数:<br><br>
+                    div_t temp;<br>
+                    temp = div( x, y );<br>
+                    printf( "%d divided by %d yields %d with a remainder of %d\n", x, y, temp.quot, temp.rem );
+
+
+                </p>
+            </div>
+            <div class="funcblock">
+                <h2>ldiv</h2>
+                <p>语法:<br>#include &ltstdlib.h&gt<br>ldiv_t ldiv( long numerator, long denominator );<br><br>
+                    函数返回参数numerator / denominator的商和余数。结构类型 ldiv_t 定义在stdlib.h中：<br><br>
+                long quot;     // 商数<br>
+                long rem;      // 余数<br><br>                </p>
+            </div>
+            
+        </div>
+    </div>
+    <hr style="position:absolute;top: 4620px;left: 10%;" size="1" width="85%">
+    <p id="footer" style="position:absolute;left:40%;top: 4620px;padding-bottom: 15px;">
+        Copyright &copy 2021 What's up小组 All Rights Reserved.
+    </p>
+</body>
+</html>
