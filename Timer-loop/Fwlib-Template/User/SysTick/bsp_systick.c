@@ -3,10 +3,10 @@
 #include "misc.h"
 #include "bsp_systick.h"
 #include "bsp_ls.h"
-
+#include "bsp_led.h"
 
 int Receive_Flag=0;     //标记是否为第一次接收激光传感器中断
-int TotalTime=0;
+double TotalTime=0;
 
 // couter 减1的时间 等于 1/systick_clk
 // 当counter 从 reload 的值减小到0的时候，为一个循环，如果开启了中断则执行中断服务程序，
@@ -45,6 +45,7 @@ void count(void)
 				//等待下降沿
 				while(GPIO_ReadInputDataBit(LS_GPIO_PORT,LS_GPIO_PIN) == 1);
 				Receive_Flag=1;   //第一次接受激光传感器信号
+				LED3(1);
 			}
 			//第一个下降沿结束，开始计时
 			else if(Receive_Flag==1&&(GPIO_ReadInputDataBit(LS_GPIO_PORT,LS_GPIO_PIN) == 1))          
@@ -58,6 +59,7 @@ void count(void)
 						TotalTime++;
 				}
 				Receive_Flag=2;  //第二次接受激光传感器信号
+				LED3(0);
 				break;
 			}
 		}

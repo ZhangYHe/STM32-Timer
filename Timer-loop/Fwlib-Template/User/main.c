@@ -8,7 +8,7 @@
 #include "bsp_systick.h"
 
 extern int Receive_Flag;
-extern int TotalTime;
+extern double TotalTime;
 
 int main(void)
 {

@@ -30,3 +30,4 @@
 .\objects\bsp_systick.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\bsp_systick.o: ..\User\SysTick\bsp_systick.h
 .\objects\bsp_systick.o: ..\User\ls\bsp_ls.h
+.\objects\bsp_systick.o: ..\User\led\bsp_led.h
