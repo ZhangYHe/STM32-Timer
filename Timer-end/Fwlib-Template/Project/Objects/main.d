@@ -33,3 +33,6 @@
 .\objects\main.o: ..\User\exti\bsp_exti.h
 .\objects\main.o: ..\User\ls\bsp_ls.h
 .\objects\main.o: ..\User\display\bsp_display.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
+.\objects\main.o: ..\User\led\bsp_led.h
+.\objects\main.o: ..\User\SysTick\bsp_systick.h

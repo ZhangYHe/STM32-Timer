@@ -30,6 +30,7 @@
 #include "bsp_exti.h"
 #include "bsp_ls.h"
 #include "bsp_display.h"
+#include "bsp_systick.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -153,9 +154,8 @@ void SysTick_Handler(void)
 //	}	 
 //}
 
-clock_t start,end;
-int Receive_Flag=0;     //标记是否为第一次接收激光传感器中断
-double TotalTime=0;
+extern int Receive_Flag;
+extern double TotalTime;
 
 void USART2_IRQHandler(void)
 {
@@ -166,27 +166,26 @@ void USART2_IRQHandler(void)
 		//第一次接收到开始信号
     if(ucTemp=='s'&&Receive_Flag==0)
 		{
-			start = clock();
 			Receive_Flag=1;
 		}
 	}	 
 }
 
-void EXTI0_IRQHandler(void)
-{
-  //确保是否产生了EXTI Line中断
-	if(EXTI_GetITStatus(LS_INT_EXTI_LINE) != RESET) 
-	{
-		end = clock();
-		TotalTime=(double)(end-start)/CLK_TCK;
-		
-		//显示时间
-		Display_Time();
-		
-		//清除中断标志位
-		EXTI_ClearITPendingBit(LS_INT_EXTI_LINE);     
-	}  
-}
+//void EXTI0_IRQHandler(void)
+//{
+//  //确保是否产生了EXTI Line中断
+//	if(EXTI_GetITStatus(LS_INT_EXTI_LINE) != RESET) 
+//	{
+//		end = clock();
+//		TotalTime=(double)(end-start)/CLK_TCK;
+//		
+//		//显示时间
+//		Display_Time();
+//		
+//		//清除中断标志位
+//		EXTI_ClearITPendingBit(LS_INT_EXTI_LINE);     
+//	}  
+//}
 
 /******************************************************************************/
 /*                 STM32F10x Peripherals Interrupt Handlers                   */

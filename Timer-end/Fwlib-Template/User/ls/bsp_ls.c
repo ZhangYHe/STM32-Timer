@@ -10,8 +10,8 @@ void LS_GPIO_Config(void)
 		/*选择要控制的GPIO引脚*/
 		GPIO_InitStructure.GPIO_Pin = LS_GPIO_PIN;	
 
-		/*设置引脚模式为通用推挽输出*/
-		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;   
+		/*设置引脚模式为浮空输入*/
+		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;   
 
 		/*设置引脚速率为50MHz */   
 		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 

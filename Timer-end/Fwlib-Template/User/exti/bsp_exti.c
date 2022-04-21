@@ -63,8 +63,8 @@ void EXTI_LS_Config(void)
 	
 	/* EXTI为中断模式 */
   EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-	/* 上升沿中断 */
-  EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+	/* 下降沿中断*/
+  EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
   /* 使能中断 */	
   EXTI_InitStructure.EXTI_LineCmd = ENABLE;
   EXTI_Init(&EXTI_InitStructure);

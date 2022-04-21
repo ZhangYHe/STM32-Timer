@@ -208,15 +208,15 @@ void Delay(void)
 	for(int j = 0;j<=0xfff;j++) {};
 }
 
-
-void Display_Time(void)
+void Display_Time(double temp)
 {
+	
 		int num1,num2,num3,num4;
 	
-		num4=(int)(TotalTime*100)%10;
-    num3=(int)(TotalTime*10)%10;
-    num2=(int)(TotalTime*1)%10;
-    num1=(int)(TotalTime/10)%10;
+		num4=(int)(temp*100)%10;
+    num3=(int)(temp*10)%10;
+    num2=(int)(temp*1)%10;
+    num1=(int)(temp/10)%10;
 	
 		while(1)
 		{

@@ -35,3 +35,4 @@
 .\objects\stm32f10x_it.o: ..\User\exti\bsp_exti.h
 .\objects\stm32f10x_it.o: ..\User\ls\bsp_ls.h
 .\objects\stm32f10x_it.o: ..\User\display\bsp_display.h
+.\objects\stm32f10x_it.o: ..\User\SysTick\bsp_systick.h
