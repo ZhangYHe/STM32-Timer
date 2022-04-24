@@ -27,6 +27,7 @@
 #include "bsp_usart.h"
 #include "bsp_exti.h"
 #include "bsp_ls.h"
+#include "bsp_led.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -155,11 +156,13 @@ void EXTI0_IRQHandler(void)
   //确保是否产生了EXTI Line中断
 	if(EXTI_GetITStatus(LS_INT_EXTI_LINE) != RESET) 
 	{
+		LED3(1);
 		//从串口发送s，开始计时
 		USART_SendFlag( DEBUG_USARTx, 's');
     //清除中断标志位
 		EXTI_ClearITPendingBit(LS_INT_EXTI_LINE);     
 	}  
+	LED3(0);
 }
 
 

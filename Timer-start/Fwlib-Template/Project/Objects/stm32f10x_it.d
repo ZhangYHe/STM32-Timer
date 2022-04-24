@@ -33,3 +33,4 @@
 .\objects\stm32f10x_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\stm32f10x_it.o: ..\User\exti\bsp_exti.h
 .\objects\stm32f10x_it.o: ..\User\ls\bsp_ls.h
+.\objects\stm32f10x_it.o: ..\User\led\bsp_led.h

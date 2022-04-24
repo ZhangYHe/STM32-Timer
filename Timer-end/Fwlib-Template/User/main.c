@@ -27,9 +27,11 @@ int main(void)
 	while(1)                            
 	{
 		Receive_Flag=0;
-		count();
+		if(Receive_Flag==1)
+			count();
 		//TotalTime单位为ms，转化为s
-		Display_Time(TotalTime/1000);
+		if(Receive_Flag==2)
+			Display_Time(TotalTime/1000);
 	}
 }
 /*********************************************END OF FILE**********************/

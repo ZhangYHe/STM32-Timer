@@ -31,6 +31,7 @@
 #include "bsp_ls.h"
 #include "bsp_display.h"
 #include "bsp_systick.h"
+#include "bsp_led.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -160,6 +161,7 @@ extern double TotalTime;
 void USART2_IRQHandler(void)
 {
   uint8_t ucTemp;
+	LED2(1);
 	if(USART_GetITStatus(DEBUG_USARTx,USART_IT_RXNE)!=RESET)
 	{		
 		ucTemp = USART_ReceiveData(DEBUG_USARTx);
@@ -169,6 +171,7 @@ void USART2_IRQHandler(void)
 			Receive_Flag=1;
 		}
 	}	 
+	//LED2(0);
 }
 
 //void EXTI0_IRQHandler(void)

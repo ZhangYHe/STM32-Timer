@@ -7,7 +7,7 @@
 /* 定义LED连接的GPIO端口, 用户只需要修改下面的代码即可改变控制的LED引脚 */
 #define LED2_GPIO_PORT    	GPIOB			              /* GPIO端口 */
 #define LED2_GPIO_CLK 	    RCC_APB2Periph_GPIOB		/* GPIO端口时钟 */
-#define LED2_GPIO_PIN		GPIO_Pin_12			        /* 连接到SCL时钟线的GPIO */
+#define LED2_GPIO_PIN		GPIO_Pin_14			        /* 连接到SCL时钟线的GPIO */
 
 #define LED3_GPIO_PORT    	GPIOB			              /* GPIO端口 */
 #define LED3_GPIO_CLK 	    RCC_APB2Periph_GPIOB		/* GPIO端口时钟 */

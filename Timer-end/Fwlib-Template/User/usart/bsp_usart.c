@@ -1,6 +1,6 @@
 #include "bsp_usart.h"
-
-/*void USART_Config(void)
+#include "bsp_exti.h"
+void USART_Config(void)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	USART_InitTypeDef USART_InitStructure;
@@ -42,7 +42,7 @@
 	// 使能串口
 	USART_Cmd(DEBUG_USARTx, ENABLE);	    
 }
-*/
+
 void USART_SendFlag( USART_TypeDef * pUSARTx, uint8_t ch)
 {
 	/* 发送一个字节数据到USART */

@@ -45,12 +45,12 @@ void count(void)
 //				//等待下降沿
 //				while(GPIO_ReadInputDataBit(LS_GPIO_PORT,LS_GPIO_PIN) == 1);
 //				Receive_Flag=1;   //第一次接受激光传感器信号
-				LED3(1);
+				//LED3(1);
 			}
 			//第一个下降沿结束，开始计时
 			else if(Receive_Flag==1&&(GPIO_ReadInputDataBit(LS_GPIO_PORT,LS_GPIO_PIN) == 1))          
 			{
-				
+				LED3(1);
 				while(GPIO_ReadInputDataBit(LS_GPIO_PORT,LS_GPIO_PIN) == 1)
 				{
 					// 当计数器的值减小到0的时候，CRTL寄存器的位16会置1

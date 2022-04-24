@@ -31,8 +31,8 @@
 .\objects\stm32f10x_it.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\stm32f10x_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\stm32f10x_it.o: ..\User\usart\bsp_usart.h
-.\objects\stm32f10x_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\stm32f10x_it.o: ..\User\exti\bsp_exti.h
 .\objects\stm32f10x_it.o: ..\User\ls\bsp_ls.h
 .\objects\stm32f10x_it.o: ..\User\display\bsp_display.h
 .\objects\stm32f10x_it.o: ..\User\SysTick\bsp_systick.h
+.\objects\stm32f10x_it.o: ..\User\led\bsp_led.h
