@@ -730,7 +730,7 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x5EEA1DF2)
 I (..\User\usart\bsp_usart.h)(0x625B8749)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60B0EE2B)
 I (..\User\ls\bsp_ls.h)(0x625B6535)
-I (..\User\display\bsp_display.h)(0x625B8961)
+I (..\User\display\bsp_display.h)(0x6270F890)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x57F606B8)
 I (..\User\led\bsp_led.h)(0x625B6CE6)
 I (..\User\SysTick\bsp_systick.h)(0x625EABE3)
@@ -769,7 +769,7 @@ I (..\User\usart\bsp_usart.h)(0x625B8749)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60B0EE2B)
 I (..\User\exti\bsp_exti.h)(0x625EBA30)
 I (..\User\ls\bsp_ls.h)(0x625B6535)
-I (..\User\display\bsp_display.h)(0x625B8961)
+I (..\User\display\bsp_display.h)(0x6270F890)
 I (..\User\led\bsp_led.h)(0x625B6CE6)
 I (..\User\SysTick\bsp_systick.h)(0x625EABE3)
 F (..\User\usart\bsp_usart.c)(0x625B8737)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\usart -I ..\User\exti -I ..\User\display -I ..\User\ls -I ..\User\led -I ..\User\SysTick-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F10X_LD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_LD-o .\objects\bsp_usart.o --omf_browse .\objects\bsp_usart.crf --depend .\objects\bsp_usart.d)
@@ -866,7 +866,7 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x5EEA1DF2)
 I (..\User\usart\bsp_usart.h)(0x625B8749)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60B0EE2B)
 F (..\User\display\bsp_display.c)(0x625B8941)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\usart -I ..\User\exti -I ..\User\display -I ..\User\ls -I ..\User\led -I ..\User\SysTick-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F10X_LD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_LD-o .\objects\bsp_display.o --omf_browse .\objects\bsp_display.crf --depend .\objects\bsp_display.d)
-I (..\User\display\bsp_display.h)(0x625B8961)
+I (..\User\display\bsp_display.h)(0x6270F890)
 I (..\Libraries\CMSIS\stm32f10x.h)(0x5EEA1DF2)
 I (..\Libraries\CMSIS\core_cm3.h)(0x5EEA1DF2)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -927,7 +927,7 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x5EEA1DF2)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x5EEA1DF2)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x57F606B8)
 I (..\User\ls\bsp_ls.h)(0x625B6535)
-I (..\User\display\bsp_display.h)(0x625B8961)
+I (..\User\display\bsp_display.h)(0x6270F890)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60B0EE2B)
 F (..\User\SysTick\bsp_systick.c)(0x62614397)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\usart -I ..\User\exti -I ..\User\display -I ..\User\ls -I ..\User\led -I ..\User\SysTick-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F10X_LD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_LD-o .\objects\bsp_systick.o --omf_browse .\objects\bsp_systick.crf --depend .\objects\bsp_systick.d)
 I (..\Libraries\CMSIS\stm32f10x.h)(0x5EEA1DF2)
