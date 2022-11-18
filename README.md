@@ -1,2 +1,2 @@
 # STM32-Timer
-Timer based on STM32 for BITFSAE
+基于STM32F103的计时器
